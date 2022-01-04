@@ -1460,8 +1460,6 @@ ifa_lookup(char *ifa_name, int flags)
 		if ((flags & PFI_AFLAG_PEER) &&
 		    !(p->ifa_flags & IFF_POINTOPOINT))
 			continue;
-		if ((flags & PFI_AFLAG_NETWORK) && p->ifindex > 0)
-			continue;
 		if (last_if == NULL || strcmp(last_if, p->ifname))
 			got4 = got6 = 0;
 		last_if = p->ifname;
